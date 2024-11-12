@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit(0);
 }
 
-
 require_once "board.php";
 require_once "player.php";
 session_start();
@@ -34,7 +33,6 @@ $r = array_shift($request);
 if ($r == 'resetboard' && $method == 'POST') {
     $_SESSION['board'] = new Board(); //Αρχικοποίηση board σε Session για να μην το χάσω
     $_SESSION['playing'] = 'R'; //Παίζει πρώτος ο κόκκινος
-
 } elseif ($r == 'makemove' && $method == 'POST') {
     if(isset($_SESSION[$input['username']]) && $_SESSION[$input['username']]->checkStatus()) {
         $userColor = $_SESSION[$input['username']]->getColor();

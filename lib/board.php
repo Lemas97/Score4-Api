@@ -1,5 +1,5 @@
 <?php
-require_once "dbconnect.php";
+require(dirname(__FILE__) . "/dbconnect.php");
     class Board {
 
         private $board;
